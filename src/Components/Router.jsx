@@ -6,6 +6,7 @@ import Jobs from "./Jobs";
 import Deteils from "./Deteils";
 import PrivetRout from "../PrivetRout/PrivetRout";
 import Jobapply from "../PrivetRout/Jobapply";
+import MyApplication from "./MyApplication";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,14 @@ export const router = createBrowserRouter([
       {
         path: "jobs/:id",
         Component: Deteils,
+      },
+      {
+        path: "MyApplication",
+        element: (
+          <PrivetRout>
+            <MyApplication />
+          </PrivetRout>
+        ),
       },
       {
         path: "jobapply/:id",

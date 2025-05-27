@@ -26,7 +26,7 @@ const Navber = () => {
         {User && (
           <>
             <NavLink
-              to="/"
+              to="/MyApplication"
               className=" ml-5 hover:text-blue-500 hover:underline"
             >
               My Application

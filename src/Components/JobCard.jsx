@@ -101,7 +101,7 @@ const JobCard = ({ job }) => {
           </button>
         </NavLink>
         <Link to={`/jobapply/${_id}`}>
-          <button className="px-6 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition">
+          <button className="px:3 lg:px-6 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition">
             Apply Now
           </button>
         </Link>
