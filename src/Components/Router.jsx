@@ -3,6 +3,10 @@ import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
 import Jobs from "./Jobs";
+import Deteils from "./Deteils";
+import PrivetRout from "../PrivetRout/PrivetRout";
+import Jobapply from "../PrivetRout/Jobapply";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +19,18 @@ export const router = createBrowserRouter([
       {
         path: "Register",
         Component: Register,
+      },
+      {
+        path: "jobs/:id",
+        Component: Deteils,
+      },
+      {
+        path: "jobapply/:id",
+        element: (
+          <PrivetRout>
+            <Jobapply />
+          </PrivetRout>
+        ),
       },
       {
         index: true,

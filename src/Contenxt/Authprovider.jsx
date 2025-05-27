@@ -15,6 +15,7 @@ const Authprovider = ({ children }) => {
   // google sign in
   const provider = new GoogleAuthProvider();
   const googlesignIn = () => {
+    setLoadign(true);
     return signInWithPopup(auth, provider);
   };
   const userWithEmail = (email, password) => {
@@ -32,7 +33,15 @@ const Authprovider = ({ children }) => {
   const signout = () => {
     return signOut(auth);
   };
-  const Userinfo = { User, setUser, userWithEmail, googlesignIn, signout };
+  const Userinfo = {
+    User,
+    setUser,
+    userWithEmail,
+    googlesignIn,
+    signout,
+    Loadign,
+    setLoadign,
+  };
 
   return (
     <authcontext.Provider value={Userinfo}>{children}</authcontext.Provider>

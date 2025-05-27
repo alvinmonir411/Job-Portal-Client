@@ -20,12 +20,19 @@ const Navber = () => {
         <strong className="text-blue-500">CRUD</strong>
       </div>
       <div>
-        <NavLink
-          to="/"
-          className="border p-1 hover:text-blue-500 hover:underline"
-        >
+        <NavLink to="/" className="  hover:text-blue-500 hover:underline">
           Home
         </NavLink>
+        {User && (
+          <>
+            <NavLink
+              to="/"
+              className=" ml-5 hover:text-blue-500 hover:underline"
+            >
+              My Application
+            </NavLink>
+          </>
+        )}
       </div>
       <div>
         {User ? (

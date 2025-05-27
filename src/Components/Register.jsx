@@ -2,10 +2,13 @@ import React, { use } from "react";
 import { authcontext } from "../Contenxt/Authcontext";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { FaGoogle } from "react-icons/fa6";
 const Register = () => {
   const { User, googlesignIn, setUser, userWithEmail } = use(authcontext);
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const Navigate = useNavigate();
   const handleSignUP = (e) => {
     e.preventDefault();
@@ -38,9 +41,10 @@ const Register = () => {
     googlesignIn()
       .then((result) => {
         const user = result.user;
+        console.log(user);
         setUser(user);
-        Navigate("/");
         toast.success("you have successfully Signup ");
+        Navigate(from, { replace: true });
       })
       .catch((error) => {
         toast.error("error.message");
